@@ -1,212 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - Turrab Haider</title>
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f4f8;
-    }
+    :root {
+      --primary-color: #3498db;
+      --background-color: #ecf5fc;
+      --card-color: #ffffff;
+      --text-color: #2c3e50;
+      --input-color: #f1f5f9;
+      --accent-color: #2980b9;
+    }* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 40px 0;
-      text-align: center;
-    }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 
-    .container {
-      max-width: 700px;
-      margin: 50px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
+header {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
 
-    h2 {
-      color: #0d47a1;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
 
-    label {
-      display: block;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #333;
-    }
+.container {
+  max-width: 500px;
+  margin: 3rem auto;
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: fadeIn 1s ease-in-out;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #f9fafe;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
+.container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
 
-    button {
-      margin-top: 30px;
-      padding: 14px;
-      width: 100%;
-      background-color: #1976d2;
-      color: white;
-      font-size: 17px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+label {
+  font-weight: 500;
+  margin-top: 1rem;
+  display: block;
+}
 
-    button:hover {
-      background-color: #0d47a1;
-    }
+input, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--input-color);
+  font-size: 1rem;
+}
 
-    #thank-you {
-      display: none;
-      text-align: center;
-      font-size: 20px;
-      color: #0d47a1;
-      padding: 30px;
-      background-color: #e3f2fd;
-      border-radius: 12px;
-      margin-top: 30px;
-    }
+input::placeholder,
+textarea::placeholder {
+  color: #7f8c8d;
+}
 
-    .direct-contact {
-      text-align: center;
-      font-size: 16px;
-      margin: 20px 0 10px;
-      color: #444;
-    }
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-    .social-icons {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+button:hover {
+  background: var(--accent-color);
+}
 
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 24px;
-      color: #0d47a1;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+.thank-you {
+  display: none;
+  text-align: center;
+  background-color: #d6eaf8;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
 
-    .social-icons a:hover {
-      color: #1976d2;
-    }
+.social-section {
+  text-align: center;
+  margin-top: 2rem;
+}
 
-    footer {
-      background: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
 
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 20px;
-      }
-    }
+.social-icons a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  background-color: #d6eaf8;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
   </style>
 </head>
 <body>
+  <header>
+    <h1>📬 Contact Us</h1>
+  </header>  <div class="container">
+    <h2>We'd love to hear from you 😄</h2>
+    <form id="contact-form" action="https://formsubmit.co/ajax/turrabhaider061@gmail.com" method="POST">
+      <label for="name">Full Name *</label>
+      <input type="text" name="name" id="name" required placeholder="Enter your full name"><label for="phone">Phone Number *</label>
+  <input type="tel" name="phone" id="phone" required placeholder="Enter your phone number">
 
-<header>
-  <h1>Contact Us</h1>
-</header>
+  <label for="subject">Subject *</label>
+  <input type="text" name="subject" id="subject" required placeholder="Subject of your message">
 
-<div class="container">
-  <h2>We'd love to hear from you</h2>
+  <label for="message">Message *</label>
+  <textarea name="message" id="message" required placeholder="Write your message here..."></textarea>
 
-  <p class="direct-contact">Or contact us directly: <strong>+92 335 5757415</strong></p>
+  <input type="hidden" name="_captcha" value="false">
 
-  <!-- Social Media Icons -->
+  <button type="submit">Send Message 🚀</button>
+</form>
+
+<div class="thank-you" id="thank-you">
+  ✅ Thanks! Your message has been sent successfully.
+</div>
+
+<div class="social-section">
+  <p>🌐 Connect with us:</p>
   <div class="social-icons">
-    <a href="https://www.facebook.com/HAIDERTURRAB12" target="_blank" title="Facebook">
-      <i class="fab fa-facebook"></i>
+    <a href="https://www.facebook.com/HAIDERTURRAB12" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
     </a>
-    <a href="https://www.instagram.com/turrab_haider_official" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i>
+    <a href="https://www.instagram.com/turrab_haider_official" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
     </a>
-    <a href="https://wa.me/923355757415" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/923355757415" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-  </div>
-
-  <form id="contact-form" action="https://formsubmit.co/ajax/turrabhaider061@gmail.com" method="POST">
-    <label for="name">Full Name *</label>
-    <input type="text" name="name" id="name" required>
-
-    <label for="email">Email Address (optional)</label>
-    <input type="email" name="email" id="email">
-
-    <label for="phone">Phone Number *</label>
-    <input type="tel" name="phone" id="phone" required>
-
-    <label for="message">Message *</label>
-    <textarea name="message" id="message" required></textarea>
-
-    <input type="hidden" name="_captcha" value="false">
-
-    <button type="submit">Send Message</button>
-  </form>
-
-  <div id="thank-you">
-    ✅ Thank you! Your message has been sent successfully.
   </div>
 </div>
 
-<footer>
-  Developed by Turrab Haider © 2025
-</footer>
+<div class="contact-info">
+  📞 Contact us directly: <strong>+92 335 5757415</strong>
+</div>
 
-<script>
-  const form = document.getElementById("contact-form");
-  const thankYou = document.getElementById("thank-you");
+  </div>  <footer>
+    Developed by Turrab Haider © 2025
+  </footer>  <script>
+    const form = document.getElementById("contact-form");
+    const thankYou = document.getElementById("thank-you");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
 
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        thankYou.style.display = "block";
-      } else {
-        alert("❌ Error: Please check your form or internet connection.");
-      }
-    }).catch(error => {
-      alert("❌ Submission failed: " + error.message);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        } else {
+          alert("❌ Submission failed. Please try again.");
+        }
+      }).catch(error => {
+        alert("❌ Error: " + error.message);
+      });
     });
-  });
-</script>
-
-</body>
+  </script></body>
 </html>
